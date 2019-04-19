@@ -1,0 +1,16 @@
+{
+  "name": "sample_express_app",
+  "version": "1.0.0",
+  "description": "sample Rest api",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node server.js"
+  },
+  "author": "Ram",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "logger": "0.0.1"
+  }
+}
