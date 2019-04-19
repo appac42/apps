@@ -7,7 +7,7 @@ const users = require('./users')
 
 
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => res.send({'status': 'Active'}))
 app.get('/users', async function(req, res){
   try{
     let userDetails = await users.get();
@@ -28,8 +28,12 @@ app.post('/users', async function(req, res){
 })
 
 app.delete('/users/:id', async function(req, res){
-  let status = await users.delete(req.params.id);
+  try{
+    let status = await users.delete(req.params.id);
     res.send(status)
+  }catch(error){
+    res.status(500).send(error)
+  }
 })
 
 
